@@ -1,0 +1,109 @@
+bash start-gui.sh
+
+Chia basic commands
+chia init – migrates files from an old version to the latest version after an update
+
+chia start node – starts node only
+
+chia start node -r – restarts the node
+
+chia start farmer – starts the farmer, harvester, bode, and wallet
+
+chia start farmer -r – restarts everything
+
+chia plots check – checks all plot files
+
+chia show -s – show status of node
+
+chia farm summary – Show summary of the farmer
+
+chia wallet show – Show wallet data
+
+chia keys generate – Generate keys
+
+chia keys add – Add keys / seed
+
+chia stop -d all – turn off all Chia services
+
+chia netspace – show the current size of the network
+
+chia version – shows the current chia version
+
+Please send coffee donations to: 0xd0803A568615A18403C3722AC6dBb3202FD14034 (Ethereum)
+
+Creating Chia Plots
+chia create – creates a new plot according to the settings chosen in the start parameters
+
+-k NUMBER – specifies the k-size for the plot – valid values are 32, 33, 34 or 35. A k32 plot requires about 240 GB of temp memory and ends up with about 100 GB.
+
+-n NUMBER – the number of times a plot should be created
+
+-b NUMBER – size of memory to be used in MB (default 4608 MB).
+
+-f NUMBER – the farmer public key can be specified here
+
+-p NUMBER – the public key of a pool can be specified here
+
+-a NUMBER – here you can specify the fingerprint of the key to use, this option is useful if you have multiple private keys stored
+
+-t PATH – specifies the path to the temp. directory
+
+-2 PATH – specifies the path to the optional second temp. directory; this directory is used only for phase 3 and 4
+
+-d PATH – specifies the path to the final directory where the plot will be saved
+
+-r NUMBER – specifies the number of CPU cores to use in phase 1. 2 cores seems to be the best setting, more than 4 cores will give negative results.
+
+-u NUMBER – specifies the number of buckets / “pots”. More pots require less ram but more accesses to the SSD/HDD. There is no advantage to use less pots, the default is 128
+
+-e – disables bitfield plotting. This setting is not recommended.
+
+For more information on creating Chia plots, see my tutorial on Chia.
+
+Wallet commands
+chia wallet get_address – Get a receiving address
+
+chia wallet get_transaction – Obtain a transaction
+
+chia wallet get_transactions – Show all transactions
+
+chia wallet show – Show wallet data
+
+chia wallet send – send chia to another wallet
+
+sftp://192.168.2.37/home/chia-2/chia/plots
+
+
+
+Plot commands
+chia plots add PATH – adds a directory as plot directory !!!!!!!!!!!!!!!!!!!!!!
+
+chia plots check – checks the existing plot files
+
+chia plots create – creates a new plot (see above)
+
+chia plots remove – removes a plot directory from the configuration
+
+chia plots show – shows the currently stored paths for plots !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+farm commands
+chia farm challenges – displays recent challenges
+
+chia farm summary – displays a summary of the farmer
+
+key commands
+chia keys add – add a key by seed
+
+chia keys delete -f NUMBER – deletes the key with the fingerprint NUMBER
+
+chia keys delete_all – deletes all keys
+
+chia keys generate – generates a new key
+
+chia keys generate_and_print – generates a new key WITHOUT saving it
+
+chia keys show – shows all saved keys
+
+chia keys sign – signs a message with the private key
+
+chia keys verify – verifies a signature
