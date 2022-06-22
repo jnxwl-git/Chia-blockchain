@@ -1,0 +1,75 @@
+#CHIA-2-SRV
+#!/bin/bash
+cd /home/chia-2/chia-blockchain
+. ./activate && chia start farmer
+
+sudo rm -rf /mnt/ram/* | sudo mount -t tmpfs -o size=110G tmpfs /mnt/ram/
+
+sudo chia_plot -n -1  -r 48 -t /home/chia-2/chia/temp/ -2 /mnt/ram/ -d /home/chia-2/chia/plots/ -c xch1wdzl8ahxpkgjq4lwst8a5wh8pjey58v4yp2yf88qs8vkctqxn4rq04y0j4 -f 85a636e8baa6c0360317b08d9c6983713bf664520c45fe912d4ebee1ef4cc736aaf7926e7fa57aeff01bb3b5543e3651 | tee chia_log.log
+
+
+#CHIA-1-SRV
+#!/bin/bash
+
+cd /home/chia-1/chia-blockchain
+. ./activate && chia start farmer
+
+sudo rm -rf /mnt/ram/*
+
+sudo chia_plot -n -1  -r 48 -t /home/chia-1/chia/temp/ -2 /mnt/ram/ -d /home/chia-1/chia/plots/ -c xch1wdzl8ahxpkgjq4lwst8a5wh8pjey58v4yp2yf88qs8vkctqxn4rq04y0j4 -f 85a636e8baa6c0360317b08d9c6983713bf664520c45fe912d4ebee1ef4cc736aaf7926e7fa57aeff01bb3b5543e3651 | tee chia_log.log
+
+
+
+
+#!/bin/bash
+
+#Лежать здесь => /chia-blockchain
+
+cd /home/chia-1/Загрузки/chia-blockchain
+. ./activate
+cd chia-blockchain-gui
+npm run electron &
+
+sudo mount -t tmpfs -o size=110G tmpfs /mnt/ram/
+
+
+
+#CHIA-1-SRV plotter
+
+#!/bin/bash
+
+sudo rm -rf /mmt/ram/*
+
+sudo mount -t tmpfs -o size=110G tmpfs /mnt/ram/
+
+sudo chia_plot -n 30 -r 64 -t /home/chia-1/chia/temp/ -2 /mnt/ram/ -d /home/chia-1/chia/plots/ -c xch1wdzl8ahxpkgjq4lwst8a5wh8pjey58v4yp2yf88qs8vkctqxn4rq04y0j4 -f 85a636e8baa6c0360317b08d9c6983713bf664520c45fe912d4ebee1ef4cc736aaf7926e7fa57aeff01bb3b5543e3651 | tee chia_log.log
+
+
+
+#CHIA-2-SRV plotter
+
+
+#!/bin/bash
+
+sudo rm -rf /mnt/ram/*
+
+sudo mount -t tmpfs -o size=110G tmpfs /mnt/ram/
+
+sudo chia_plot -n 20  -r 64 -t /home/chia-2/chia/temp/ -2 /mnt/ram/ -d /home/chia-2/chia/plots/ -c xch1wdzl8ahxpkgjq4lwst8a5wh8pjey58v4yp2yf88qs8vkctqxn4rq04y0j4 -f 85a636e8baa6c0360317b08d9c6983713bf664520c45fe912d4ebee1ef4cc736aaf7926e7fa57aeff01bb3b5543e3651 | tee chia_log.log
+
+
+
+
+
+
+#cpu_miner.sh
+
+#!/bin/bash
+
+./cpuminer -a gr -o stratum+tcp://stratum-eu.rplant.xyz:7056 -u RDHNUSzEiqRxeGxxPsdyCebVDUAK7KnC2b
+
+
+
+
+
+
